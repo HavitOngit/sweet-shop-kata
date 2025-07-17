@@ -1,0 +1,69 @@
+Kata: Sweet Shop Management System 
+
+Objective 
+Create a simple Sweet Shop Management System following TDD that allows users to  perform basic operations such as adding sweets, updating sweet details, deleting sweets,  searching, sorting, and viewing available sweets. Optionally, you may implement a basic  front-end interface. 
+Requirements 
+
+1. Operations 
+Add Sweets: 
+• Users should be able to add new sweets to the shop. 
+o Each sweet should have a unique identifier (e.g., ID), name, category (e.g.,  chocolate, candy, pastry), price, and quantity in stock. 
+Delete Sweets: 
+• Users should be able to remove sweets from the shop. 
+View Sweets: 
+• Users should be able to view a list of all sweets currently available in the shop. 
+2. Search & Sort Features 
+Search: 
+• Users should be able to search for sweets by name, category, or price range. 
+3. Inventory Management 
+Purchase Sweets: 
+• Users can purchase sweets, which decreases the quantity of them in stock. • The system should ensure enough stock is available before allowing a purchase. • If there is not enough stock, the system should raise an appropriate error. 
+Restock Sweets: 
+• Users can restock sweets, increasing their quantity of stock.
+
+--Instructions 
+
+Test-Driven Development (TDD) 
+• Write tests before implementing the functionality. Follow the three laws of TDD. • Ensure that all tests pass before considering the implementation complete. • Aim for high test coverage and meaningful test cases. 
+Clean Coding Practices 
+• Write clean, readable, and maintainable code. 
+• Follow SOLID principles and other best practices in software design. • Ensure the code is well-documented with meaningful comments and clear  variable/method names. 
+
+---
+
+ Commit your changes frequently with meaningful commit messages to show your TDD  journey. 
+
+---
+
+(git Workflow is mentioned in assasment just for refference)
+ Sample Steps and Git Workflow 
+1. Initialize Git Repository 
+git init 
+2. Create Initial README 
+echo "# Sweet Shop Management System" > README.md 
+git add README.md 
+git commit -m "Initial commit with README" 
+3. Write Tests for Adding Sweets 
+• Create a new test file (e.g., test_sweetshop.py). 
+• Write a test for the add sweet feature. 
+• Commit your changes: 
+git add . 
+git commit -m "Add test for adding sweets" 
+4. Implement Adding Sweets 
+• Implement the add sweet functionality. 
+• Ensure the test passes. 
+• Commit your changes: 
+git add . 
+git commit -m "Implement add sweet feature" 
+5. Repeat Steps 3-4 for Delete, Search, Sort, Purchase, and Restock Features 6. Push to Remote Repository 
+
+---
+
+• Assessment Focus: 
+• Adherence to TDD principles. 
+• Frequency and quality of Git commits. 
+• Clean coding practices. 
+• Proper use of language-specific features and idioms is important. 
+---
+Note: Incubyte is an AI first company. We not only encourage the use of AI, but we also  think it’s a must in SDLC. Feel free to use your favorite AI tools. Make sure to mark the  AI commits separately. 
+

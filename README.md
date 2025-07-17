@@ -35,7 +35,7 @@ A TypeScript-based inventory management system for sweet shops built following T
 
 ## Project Structure
 
-```
+```text
 sweet-shop-management-system/
 ├── src/
 │   ├── models/          # Data models and interfaces

@@ -40,4 +40,17 @@ export class SweetModel implements sweet {
       );
     }
   }
+
+  public updateQuantity(newQuantity: number): void {
+    if (
+      typeof newQuantity !== "number" ||
+      newQuantity < 0 ||
+      !Number.isInteger(newQuantity)
+    ) {
+      throwError(
+        "Invalid Quantity Quantity must be a non-negative number and an integer",
+      );
+    }
+    this.quantity = newQuantity;
+  }
 }

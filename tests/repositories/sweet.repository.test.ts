@@ -18,4 +18,14 @@ describe("sweet repository", () => {
       expect(() => repository.add(sweet)).toThrow();
     });
   });
+
+  describe("getByID", () => {
+    it("should return a sweet by ID", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      repository.add(sweet);
+      const foundSweet = repository.getByID("1");
+      expect(foundSweet).toEqual(sweet);
+    });
+  });
 });

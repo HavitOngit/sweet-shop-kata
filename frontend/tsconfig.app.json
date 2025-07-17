@@ -15,9 +15,11 @@
     "checkJs": true,
     "isolatedModules": true,
     "moduleDetection": "force",
+    "baseUrl": ".",
      "paths": {
       "@core/": ["../"],
-      "@core/*": ["../*"]
+      "@core/*": ["../*"],
+      "@/*": ["./src/*"]
   }
 
   },

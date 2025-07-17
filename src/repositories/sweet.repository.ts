@@ -23,4 +23,12 @@ export class SweetRepository {
   getAll(): SweetModel[] {
     return Array.from(this.sweets.values());
   }
+
+  update(id: string, updatedSweet: SweetModel): SweetModel {
+    if (!this.sweets.has(id)) {
+      throwError(`Sweet with ID ${id} not found`);
+    }
+    this.sweets.set(id, updatedSweet);
+    return updatedSweet;
+  }
 }

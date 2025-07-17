@@ -48,5 +48,14 @@ describe("Sweet Model", () => {
       sweet.updatePrice(10);
       expect(sweet.price).toBe(10);
     });
+    it("should throw an error for invalid Quantity update", () => {
+      const sweet = new SweetModel("1", "Chocobar", "Ice-Candy", 2.5, 10);
+      expect(() => sweet.updateQuantity(-5)).toThrow();
+      expect(() => sweet.updateQuantity(10.5)).toThrow();
+    });
+    it("should throw an error for invalid Price update", () => {
+      const sweet = new SweetModel("1", "Chocobar", "Ice-Candy", 2.5, 10);
+      expect(() => sweet.updatePrice(-5)).toThrow();
+    });
   });
 });

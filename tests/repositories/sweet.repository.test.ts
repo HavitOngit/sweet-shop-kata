@@ -24,7 +24,7 @@ describe("sweet repository", () => {
       const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
       const repository = new SweetRepository();
       repository.add(sweet);
-      const foundSweet = repository.getByID("1");
+      const foundSweet = repository.getById("1");
       expect(foundSweet).toEqual(sweet);
     });
   });

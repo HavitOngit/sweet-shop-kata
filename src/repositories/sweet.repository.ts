@@ -11,4 +11,12 @@ export class SweetRepository {
     this.sweets.set(sweet.id, sweet);
     return sweet;
   }
+
+  getById(id: string): SweetModel {
+    const sweet = this.sweets.get(id);
+    if (!sweet) {
+      throwError(`Sweet with ID ${id} not found`);
+    }
+    return sweet;
+  }
 }

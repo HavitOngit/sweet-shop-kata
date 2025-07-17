@@ -39,4 +39,15 @@ describe("sweet repository", () => {
       expect(repository.getAll()).toEqual([sweet1, sweet2]);
     });
   });
+
+  describe("update sweet", () => {
+    it("should update a sweet", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      repository.add(sweet);
+      sweet.name = "Dark Chocolate";
+      const updatedSweet = repository.update("1", sweet);
+      expect(updatedSweet.name).toBe("Dark Chocolate");
+    });
+  });
 });

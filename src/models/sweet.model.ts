@@ -53,4 +53,11 @@ export class SweetModel implements sweet {
     }
     this.quantity = newQuantity;
   }
+
+  public updatePrice(newPrice: number): void {
+    if (typeof newPrice !== "number" || newPrice < 0) {
+      throwError("Invalid Price Price must be a non-negative number");
+    }
+    this.price = newPrice;
+  }
 }

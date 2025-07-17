@@ -19,4 +19,8 @@ export class SweetRepository {
     }
     return sweet;
   }
+
+  getAll(): SweetModel[] {
+    return Array.from(this.sweets.values());
+  }
 }

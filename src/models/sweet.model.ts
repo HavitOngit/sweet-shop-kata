@@ -1,4 +1,6 @@
-export interface sweet {
+import { throwError } from "../util";
+
+export interface Sweet {
   id: string;
   name: string;
   category: string;
@@ -6,11 +8,7 @@ export interface sweet {
   quantity: number;
 }
 
-function throwError(massage: string): never {
-  throw new Error(massage);
-}
-
-export class SweetModel implements sweet {
+export class SweetModel implements Sweet {
   constructor(
     public id: string,
     public name: string,

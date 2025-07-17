@@ -95,10 +95,6 @@ export class SweetService implements ISweetService {
 
     const sweet = this.repository.getById(id);
 
-    if (!sweet) {
-      throwError(`Sweet with ID ${id} not found`);
-    }
-
     if (sweet.quantity < quantity) {
       throwError("Insufficient stock");
     }
@@ -121,9 +117,6 @@ export class SweetService implements ISweetService {
     }
 
     const sweet = this.repository.getById(id);
-    if (!sweet) {
-      throwError(`Sweet with ID ${id} not found`);
-    }
     const newQuantity = sweet.quantity + quantity;
     sweet.updateQuantity(newQuantity);
 

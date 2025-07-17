@@ -45,4 +45,11 @@ describe("Sweet Model", () => {
       );
     });
   });
+  describe("update", () => {
+    it("should update the sweet Quantity", () => {
+      const sweet = new SweetModel("1", "Chocobar", "Ice-Candy", 2.5, 10);
+      sweet.updateQuantity(20);
+      expect(sweet.quantity).toBe(20);
+    });
+  });
 });

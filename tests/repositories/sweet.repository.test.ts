@@ -28,4 +28,15 @@ describe("sweet repository", () => {
       expect(foundSweet).toEqual(sweet);
     });
   });
+
+  describe("get all sweets", () => {
+    it("should return all sweets", () => {
+      const sweet1 = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const sweet2 = new SweetModel("2", "Gummy Bears", "Candy", 15, 5);
+      const repository = new SweetRepository();
+      repository.add(sweet1);
+      repository.add(sweet2);
+      expect(repository.getAll()).toEqual([sweet1, sweet2]);
+    });
+  });
 });

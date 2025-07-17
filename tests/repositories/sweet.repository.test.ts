@@ -10,5 +10,12 @@ describe("sweet repository", () => {
       const addedSweet = repository.add(sweet);
       expect(addedSweet).toEqual(sweet);
     });
+
+    it("should not add a sweet with an existing ID", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      repository.add(sweet);
+      expect(() => repository.add(sweet)).toThrow();
+    });
   });
 });

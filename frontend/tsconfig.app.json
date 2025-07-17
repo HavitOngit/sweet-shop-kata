@@ -16,7 +16,8 @@
     "isolatedModules": true,
     "moduleDetection": "force",
      "paths": {
-    "@core/*": ["../*"]
+      "@core/": ["../"],
+      "@core/*": ["../*"]
   }
 
   },

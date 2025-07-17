@@ -103,7 +103,16 @@ bun test --watch
 
 # Run specific test file
 bun test src/sweet.test.ts
+
+# Generate coverage report
+bun test --coverage
 ```
+
+### Test Coverage
+
+![Test Coverage Report](test-report.png)
+
+Current test coverage: **95.16%** overall coverage with comprehensive testing across all layers.
 
 ### Code Quality
 
@@ -174,29 +183,6 @@ The system includes custom error classes for various scenarios:
 - **Integration Tests**: Test component interactions
 - **Error Scenarios**: Test error handling and edge cases
 - **High Coverage**: Aim for comprehensive test coverage
-
-## Git Workflow
-
-This project uses conventional commits and follows TDD commit patterns:
-
-```bash
-# Example TDD workflow
-git add .
-git commit -m "test: add test for sweet creation"
-git add .
-git commit -m "feat: implement sweet creation functionality"
-git add .
-git commit -m "refactor: improve sweet validation logic"
-```
-
-### Commit Types
-
-- `feat`: New features
-- `test`: Adding or updating tests
-- `refactor`: Code refactoring
-- `fix`: Bug fixes
-- `docs`: Documentation updates
-- `chore`: Maintenance tasks
 
 ## Contributing
 

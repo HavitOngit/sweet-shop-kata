@@ -1,7 +1,18 @@
 import { SweetModel } from "../models/sweet.model";
 import { throwError } from "../util";
 
-export class SweetRepository {
+export interface ISweetRepository {
+  add(sweet: SweetModel): void;
+  getById(id: string): SweetModel | undefined;
+  getAll(): SweetModel[];
+  update(id: string, sweet: SweetModel): SweetModel;
+  delete(id: string): boolean;
+  getByName(name: string): SweetModel | undefined;
+  getByCategory(category: string): SweetModel[];
+  getByPriceRange(minPrice: number, maxPrice: number): SweetModel[];
+}
+
+export class SweetRepository implements ISweetRepository {
   private sweets: Map<string, SweetModel> = new Map();
 
   add(sweet: SweetModel): SweetModel {

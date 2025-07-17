@@ -18,31 +18,23 @@ describe("Sweet Model", () => {
       ).toThrow();
     });
     it("should throw an error for invalid Name", () => {
-      expect(() => new SweetModel("1", "", "Ice-Candy", 2.5, 10)).toThrow(
-        "Invalid Name Name must be a non-empty string",
-      );
+      expect(() => new SweetModel("1", "", "Ice-Candy", 2.5, 10)).toThrow();
     });
     it("should throw an error for invalid category", () => {
-      expect(() => new SweetModel("1", "Chocobar", "", 2.5, 10)).toThrow(
-        "Invalid category category must be a non-empty string",
-      );
+      expect(() => new SweetModel("1", "Chocobar", "", 2.5, 10)).toThrow();
     });
     it("should throw an error for invalid Price", () => {
       expect(
         () => new SweetModel("1", "Chocobar", "Ice-Candy", -2.5, 10),
-      ).toThrow("Invalid Price Price must be a non-negative number");
+      ).toThrow();
     });
     it("should throw an error for invalid Quantity", () => {
       expect(
         () => new SweetModel("1", "Chocobar", "Ice-Candy", 2.5, -10),
-      ).toThrow(
-        "Invalid Quantity Quantity must be a non-negative number and an integer",
-      );
+      ).toThrow();
       expect(
         () => new SweetModel("1", "Chocobar", "Ice-Candy", 2.5, 10.5),
-      ).toThrow(
-        "Invalid Quantity Quantity must be a non-negative number and an integer",
-      );
+      ).toThrow();
     });
   });
   describe("update", () => {

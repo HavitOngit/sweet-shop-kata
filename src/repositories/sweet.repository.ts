@@ -31,4 +31,29 @@ export class SweetRepository {
     this.sweets.set(id, updatedSweet);
     return updatedSweet;
   }
+
+  getByName(name: string): SweetModel | undefined {
+    return Array.from(this.sweets.values()).find(
+      (sweet) => sweet.name === name,
+    );
+  }
+
+  getByCategory(category: string): SweetModel[] {
+    return Array.from(this.sweets.values()).filter(
+      (sweet) => sweet.category === category,
+    );
+  }
+
+  getByPriceRange(minPrice: number, maxPrice: number): SweetModel[] {
+    return Array.from(this.sweets.values()).filter(
+      (sweet) => sweet.price >= minPrice && sweet.price <= maxPrice,
+    );
+  }
+  delete(id: string): boolean {
+    if (!this.sweets.has(id)) {
+      return false;
+    }
+    this.sweets.delete(id);
+    return true;
+  }
 }

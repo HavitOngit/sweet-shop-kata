@@ -29,7 +29,7 @@ describe("sweet repository", () => {
     });
   });
 
-  describe("get all sweets", () => {
+  describe("get sweets", () => {
     it("should return all sweets", () => {
       const sweet1 = new SweetModel("1", "Chocolate", "Candy", 20, 10);
       const sweet2 = new SweetModel("2", "Gummy Bears", "Candy", 15, 5);
@@ -37,6 +37,34 @@ describe("sweet repository", () => {
       repository.add(sweet1);
       repository.add(sweet2);
       expect(repository.getAll()).toEqual([sweet1, sweet2]);
+    });
+
+    it("get sweet By Name", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      repository.add(sweet);
+      const foundSweet = repository.getByName("Chocolate");
+      expect(foundSweet?.name).toEqual("Chocolate");
+    });
+
+    it("get by category", () => {
+      const sweet1 = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const sweet2 = new SweetModel("2", "Gummy Bears", "Candy", 15, 5);
+      const repository = new SweetRepository();
+      repository.add(sweet1);
+      repository.add(sweet2);
+      const sweets = repository.getByCategory("Candy");
+      expect(sweets).toEqual([sweet1, sweet2]);
+    });
+
+    it("get by price range", () => {
+      const sweet1 = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const sweet2 = new SweetModel("2", "Gummy Bears", "Candy", 15, 5);
+      const repository = new SweetRepository();
+      repository.add(sweet1);
+      repository.add(sweet2);
+      const sweets = repository.getByPriceRange(10, 20);
+      expect(sweets).toEqual([sweet1, sweet2]);
     });
   });
 
@@ -48,6 +76,28 @@ describe("sweet repository", () => {
       sweet.name = "Dark Chocolate";
       const updatedSweet = repository.update("1", sweet);
       expect(updatedSweet.name).toBe("Dark Chocolate");
+    });
+
+    it("should not update a sweet that does not exist", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      expect(() => repository.update("1", sweet)).toThrow();
+    });
+  });
+
+  describe("delete sweet", () => {
+    it("should delete a sweet", () => {
+      const sweet = new SweetModel("1", "Chocolate", "Candy", 20, 10);
+      const repository = new SweetRepository();
+      repository.add(sweet);
+      const deleted = repository.delete("1");
+      expect(deleted).toBe(true);
+    });
+
+    it("should not delete a sweet that does not exist", () => {
+      const repository = new SweetRepository();
+      const deleted = repository.delete("1");
+      expect(deleted).toBe(false);
     });
   });
 });

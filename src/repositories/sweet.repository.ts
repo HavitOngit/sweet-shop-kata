@@ -2,8 +2,8 @@ import { SweetModel } from "../models/sweet.model";
 import { throwError } from "../util";
 
 export interface ISweetRepository {
-  add(sweet: SweetModel): void;
-  getById(id: string): SweetModel | undefined;
+  add(sweet: SweetModel): SweetModel;
+  getById(id: string): SweetModel;
   getAll(): SweetModel[];
   update(id: string, sweet: SweetModel): SweetModel;
   delete(id: string): boolean;

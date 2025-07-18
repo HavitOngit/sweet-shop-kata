@@ -14,7 +14,8 @@
     "lint:check": "eslint . --max-warnings=0",
     "lint": "eslint . --fix",
     "typecheck": "tsc --noEmit",
-    "prepare": "husky"
+    "prepare": "husky",
+    "start": "cd ui && bun run dev"
   },
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",

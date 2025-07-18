@@ -44,6 +44,7 @@ export class SweetRepository implements ISweetRepository {
       throwError(`Sweet with ID ${id} not found`);
     }
     this.sweets.set(id, updatedSweet);
+
     return updatedSweet;
   }
 

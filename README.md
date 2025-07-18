@@ -4,26 +4,6 @@ A TypeScript-based inventory management system for sweet shops built following T
 
 ## Features
 
-### Core Operations
-
-- **Add Sweets**: Add new sweets with unique ID, name, category, price, and stock quantity
-- **Update Sweets**: Modify existing sweet details
-- **Delete Sweets**: Remove sweets from inventory
-- **View Sweets**: Display all available sweets in the shop
-
-### Search & Filter
-
-- **Search by Name**: Find sweets by their name
-- **Filter by Category**: Browse sweets by category (chocolate, candy, pastry)
-- **Price Range Filter**: Search sweets within specific price ranges
-
-### Inventory Management
-
-- **Purchase Sweets**: Decrease stock quantity with validation
-- **Restock Sweets**: Increase stock quantity
-- **Stock Validation**: Prevent purchases when insufficient stock available
-- **Error Handling**: Appropriate error messages for stock issues
-
 ## Tech Stack
 
 - **Runtime**: Bun
@@ -32,6 +12,14 @@ A TypeScript-based inventory management system for sweet shops built following T
 - **Code Quality**: ESLint, Prettier
 - **Git Hooks**: Husky for pre-commit validation
 - **CI/CD**: GitHub Actions for automated releases
+
+  ### Screenshots
+
+  ![Home Screen](sreenshots/home.png)
+
+  UI screenshots are available in the [`screenshots/`](./sreenshots/) folder.
+
+  You can view more screenshots in the folder.
 
 ## Project Structure
 
@@ -78,10 +66,16 @@ bun install
 bun test
 ```
 
-4. Start development:
+4. Start ui:
 
 ```bash
-bun run dev
+cd ui & bun install
+```
+
+5. Start ui:
+
+```bash
+cd ui & bun install
 ```
 
 ## Development Workflow
@@ -141,41 +135,19 @@ interface Sweet {
 }
 ```
 
-### Core Methods
+## UI
 
-```typescript
-// Add a new sweet
-addSweet(sweet: Sweet): void
+The user interface is located in the [`ui/`](./ui/) folder.
 
-// Update existing sweet
-updateSweet(id: string, updates: Partial<Sweet>): void
+- First created with Svelte but Svelte has no reactive support for Map properties
+- Final UI created in React
+- Some components rewritten using old Svelte files with help from V0
 
-// Delete sweet
-deleteSweet(id: string): void
+## Future Improvements
 
-// Get all sweets
-getAllSweets(): Sweet[]
-
-// Search sweets
-searchSweets(query: string): Sweet[]
-
-// Filter by category
-filterByCategory(category: string): Sweet[]
-
-// Purchase sweet (decrease stock)
-purchaseSweet(id: string, quantity: number): void
-
-// Restock sweet (increase stock)
-restockSweet(id: string, quantity: number): void
-```
-
-## Error Handling
-
-The system includes custom error classes for various scenarios:
-
-- `InsufficientStockError`: When attempting to purchase more than available stock
-- `SweetNotFoundError`: When trying to access non-existent sweet
-- `InvalidInputError`: When provided data is invalid
+- **UI Enhancements**: Fix type and linting errors in the UI components
+- **Error Handling**: Implement comprehensive error handling throughout the application
+- **Persistent Memory**: Add data persistence capabilities to maintain state between sessions
 
 ## Testing Strategy
 
@@ -183,15 +155,6 @@ The system includes custom error classes for various scenarios:
 - **Integration Tests**: Test component interactions
 - **Error Scenarios**: Test error handling and edge cases
 - **High Coverage**: Aim for comprehensive test coverage
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/new-feature`
-3. Follow TDD principles: Write tests first, then implementation
-4. Ensure all tests pass: `bun test`
-5. Commit with meaningful messages
-6. Push to your fork and create a Pull Request
 
 ## AI Usage
 

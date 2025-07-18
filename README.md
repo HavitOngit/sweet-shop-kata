@@ -1,5 +1,7 @@
 # Sweet Shop Management System
 
+https://sweet-shop-kata.pages.dev/
+
 A TypeScript-based inventory management system for sweet shops built following Test-Driven Development (TDD) principles. This system allows users to manage sweet inventory, handle purchases, and perform inventory operations with full CRUD functionality.
 
 ## Features

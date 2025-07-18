@@ -1,22 +1,20 @@
 <script lang="ts">
-  import { createSweetShop } from "@core/";
-  import type { Sweet, SweetModel } from "@core/src/models/sweet.model";
-  import { SvelteMap } from "svelte/reactivity";
-
-  const sweetShop = $state(
-    createSweetShop(new SvelteMap<string, SweetModel>())
-  );
-
+  import "./app.css";
+  import type { Sweet } from "@core/src/models/sweet.model";
+  import { sweetShop } from "./lib/store.svelte";
+    import Restock from "$lib/add-sweet.svelte";
+    import AddSweet from "$lib/add-sweet.svelte";
+  
   const sweets = $derived(sweetShop.getAllSweets());
-
+  
   const sweet: Sweet = {
     id: "1",
     name: "Chocolate Bar",
     category: "Chocolate",
     price: 20,
-    quantity: 10,
+    quantity: 10
   };
-
+  
   console.log("Sweet Shop Service Created:", sweetShop, typeof sweetShop);
 </script>
 
@@ -34,4 +32,4 @@
   {/each}
 {/if}
 
-<button onclick={() => sweetShop.addSweet(sweet)}>Add Sweet</button>
+<AddSweet />

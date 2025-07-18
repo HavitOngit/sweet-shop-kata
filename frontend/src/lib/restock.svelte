@@ -1,8 +1,14 @@
 <script lang="ts">
      import { Button } from "$lib/components/ui/button/index.js";
-    import { sweetShop } from "./store.svelte";
-    const {id: string, quantity: number} = $props();
+     import { sweetShop } from "./store.svelte";
 
+    let {id, quantity}: {id: string, quantity: number} = $props();
+
+    function restockSweet() {
+
+
+        sweetShop.restockSweet(id, quantity);
+    }
 </script>
 
-<Button onclick={() => sweetShop.restockSweet(id, quantity)}>Add Sweet</Button>
+<Button onclick={restockSweet}>Add Sweet</Button>

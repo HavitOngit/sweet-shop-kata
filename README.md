@@ -8,12 +8,26 @@ A TypeScript-based inventory management system for sweet shops built following T
 
 ## Tech Stack
 
+### Backend
+
 - **Runtime**: Bun
 - **Language**: TypeScript
 - **Testing**: Built-in test runner
 - **Code Quality**: ESLint, Prettier
 - **Git Hooks**: Husky for pre-commit validation
 - **CI/CD**: GitHub Actions for automated releases
+
+### Frontend (UI)
+
+- **Framework**: React 19
+- **Language**: TypeScript
+- **Build Tool**: Vite
+- **Styling**: Tailwind CSS v4
+- **UI Components**: Radix UI primitives
+- **Icons**: Lucide React
+- **Theming**: next-themes
+- **Notifications**: Sonner
+- **Dev Tools**: ESLint, TypeScript compiler
 
   ### Screenshots
 
@@ -35,10 +49,28 @@ sweet-shop-management-system/
 │   ├── sweet.ts         # Main sweet entity
 │   ├── sweet.test.ts    # Sweet entity tests
 │   └── util.ts          # Utility functions
+├── ui/                  # React frontend application
+│   ├── src/
+│   │   ├── components/  # Reusable UI components
+│   │   │   └── ui/      # Base UI components (buttons, inputs, etc.)
+│   │   ├── lib/         # Utility functions and main components
+│   │   ├── assets/      # Static assets
+│   │   ├── App.tsx      # Main application component
+│   │   ├── main.tsx     # Application entry point
+│   │   ├── index.css    # Global styles and Tailwind imports
+│   │   └── App.css      # Component-specific styles
+│   ├── public/          # Public assets
+│   ├── index.html       # HTML template
+│   ├── vite.config.ts   # Vite configuration
+│   ├── tsconfig.json    # TypeScript configuration
+│   └── package.json     # UI dependencies and scripts
 ├── tests/               # Test files organized by layer
+├── coverage/            # Test coverage reports
+├── sreenshots/          # UI screenshots
 ├── .github/workflows/   # CI/CD configuration
 ├── .husky/             # Git hooks
-└── package.json
+├── index.ts            # Main export file
+└── package.json        # Root dependencies and scripts
 ```
 
 ## Getting Started

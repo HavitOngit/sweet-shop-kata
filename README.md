@@ -77,7 +77,13 @@ cd ui & bun install
 5. Start ui:
 
 ```bash
-cd ui & bun install
+bun run dev
+```
+
+- if you want to run ui from root run following command
+
+```base
+bun run start
 ```
 
 ## Development Workflow
@@ -120,10 +126,13 @@ bun run lint
 bun run format
 
 # Type check
-bun run type-check
+bun run typecheck
 ```
 
 ## API Reference
+
+- index.ts exports the createSweetShop() function, designed for easy integration into other projects.
+- Native API Usage: This project leverages direct function calls to the SweetShop API, providing better performance and type safety compared to HTTP-based APIs, which introduce network overhead and latency.
 
 ### Sweet Model
 
@@ -143,7 +152,7 @@ The user interface is located in the [`ui/`](./ui/) folder.
 
 - First created with Svelte but Svelte has no reactive support for Map properties
 - Final UI created in React
-- Some components rewritten using old Svelte files with help from V0
+- Some components rewritten using old Svelte files with help from v0
 
 ## Future Improvements
 

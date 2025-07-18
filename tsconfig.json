@@ -23,5 +23,15 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "noPropertyAccessFromIndexSignature": false
-  }
+
+    //ignore
+  
+  },
+  "exclude": [
+    "node_modules",
+    "coverage",
+    "build",
+    "ui"
+   
+  ],
 }

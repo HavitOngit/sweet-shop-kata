@@ -13,7 +13,11 @@ export interface ISweetRepository {
 }
 
 export class SweetRepository implements ISweetRepository {
-  private sweets: Map<string, SweetModel> = new Map();
+  private sweets: Map<string, SweetModel>;
+
+  constructor(sweets?: Map<string, SweetModel>) {
+    this.sweets = sweets || new Map();
+  }
 
   add(sweet: SweetModel): SweetModel {
     if (this.sweets.has(sweet.id)) {
@@ -40,6 +44,7 @@ export class SweetRepository implements ISweetRepository {
       throwError(`Sweet with ID ${id} not found`);
     }
     this.sweets.set(id, updatedSweet);
+
     return updatedSweet;
   }
 

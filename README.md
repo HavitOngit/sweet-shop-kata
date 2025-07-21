@@ -37,6 +37,8 @@ A TypeScript-based inventory management system for sweet shops built following T
 
   You can view more screenshots in the folder.
 
+  -**△**: for search and filtering current frontend not uses methods provided by backend instead uses JavaScript's native array methods (due to limited time)
+
 ## Project Structure
 
 ```text
@@ -191,6 +193,7 @@ The user interface is located in the [`ui/`](./ui/) folder.
 - **UI Enhancements**: Fix type and linting errors in the UI components
 - **Error Handling**: Implement comprehensive error handling throughout the application
 - **Persistent Memory**: Add data persistence capabilities to maintain state between sessions
+- **Use Methods Provided by Backend**: use methods provided by backend for search, filtering.
 
 ## Testing Strategy
 

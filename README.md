@@ -37,7 +37,7 @@ A TypeScript-based inventory management system for sweet shops built following T
 
   You can view more screenshots in the folder.
 
-  -**△**: for search and filtering current frontend not uses methods provided by backend instead uses JavaScript's native array methods (due to limited time)
+  -**△**: for **search** and **filtering** only current frontend not uses methods provided by backend instead uses JavaScript's native array methods (due to limited time)
 
 ## Project Structure
 
